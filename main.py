@@ -6,7 +6,7 @@ from Chat_api_test import communicate_with_llm  # 导入聊天函数
 from ChatMEM_api_test import export_and_upload_chat_history  # 导入聊天历史上传函数
 
 # 配置 API 相关参数
-API_KEY = "6EP8W3J-66CMJ74-MKWXQ9F-YWH94P4"  #
+API_KEY = "[你的anythingllm API_key]"
 WORKSPACE_SLUG = "anythingllm_test"
 
 # 计数器 & 记录上一轮的 `latest_doc_hash`
@@ -50,5 +50,7 @@ def main():
             except Exception as e:
                 print(f"❌ 上传失败: {e}")
 
+
+# 该main测试与anythingLLM的连接，启动后可作为聊天程序
 if __name__ == "__main__":
     main()

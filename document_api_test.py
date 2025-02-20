@@ -2,7 +2,7 @@ import requests
 import os
 
 api_url = f"http://localhost:3001/api/v1/document/upload"
-api_key = '6EP8W3J-66CMJ74-MKWXQ9F-YWH94P4'
+api_key = '[你的anythingllm API_key]'
 headers = {
     "Authorization": f'Bearer {api_key}',
     "accept": "application/json"

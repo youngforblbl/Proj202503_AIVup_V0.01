@@ -44,18 +44,3 @@ def communicate_with_llm(message, api_key, workspace_slug, mode='chat'):
     else:
         raise Exception(f"请求失败，状态码：{response.status_code}, 响应内容：{response.text}")
 
-# 主程序示例
-if __name__ == '__main__':
-    # 设置 API 密钥和工作区名称
-    API_KEY = '6EP8W3J-66CMJ74-MKWXQ9F-YWH94P4'
-    WORKSPACE_SLUG = 'anythingllm_test'  # 请确保为小写字母
-
-    # 从用户输入获取消息
-    user_message = input("请输入要发送的消息：")
-
-    try:
-        # 调用函数获取 LLM 的回复
-        llm_response = communicate_with_llm(user_message, API_KEY, WORKSPACE_SLUG)
-        print("LLM 的回复：", llm_response)
-    except Exception as e:
-        print("发生错误：", str(e))

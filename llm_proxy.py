@@ -5,13 +5,14 @@ from pydantic import BaseModel
 from Chat_api_test import communicate_with_llm  # 导入 LLM 交互函数
 from ChatMEM_api_test import export_and_upload_chat_history  # 导入聊天历史上传函数
 
+# 该程序测试Open-LLM-VTuber的后端API，使用openapi。cmd打开该程序端口后用llm_proxy_test.py作为api输入。
 # 使用方法（cmd)：uvicorn llm_proxy:app --host 0.0.0.0 --port 8000 --reload
 
 # 创建 FastAPI 应用
 app = FastAPI()
 
 # 配置 API 相关参数
-API_KEY = "6EP8W3J-66CMJ74-MKWXQ9F-YWH94P4"  #
+API_KEY = "[你的anythingllm API_key]"  #
 WORKSPACE_SLUG = "anythingllm_test"
 
 # ✅ 统一管理全局变量（线程安全）
