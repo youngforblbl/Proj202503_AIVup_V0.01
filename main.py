@@ -6,8 +6,8 @@ from Chat_api_test import communicate_with_llm  # 导入聊天函数
 from ChatMEM_api_test import export_and_upload_chat_history  # 导入聊天历史上传函数
 
 # 配置 API 相关参数
-API_KEY = "[你的anythingllm API_key]"
-WORKSPACE_SLUG = "anythingllm_test"
+API_KEY = "输入你的API密钥"
+WORKSPACE_SLUG = "dsexv2_v0-dot-0-dot-2" # 很逆天的工作区SLUG，建议在anything_LLM的api文档中查询工作区slug或在命名工作区时只用小写字母和数字（符号也别用）
 
 # 计数器 & 记录上一轮的 `latest_doc_hash`
 chat_count = 0
@@ -37,8 +37,8 @@ def main():
         # 计数聊天次数
         chat_count += 1
 
-        # 每 1 次聊天上传一次历史记录
-        if chat_count % 1 == 0:
+        # 每 10 次聊天上传一次历史记录
+        if chat_count % 10 == 0:
             print("\n📝 1 次对话已完成，正在上传聊天记录...")
             try:
                 upload_status, new_doc_hash = export_and_upload_chat_history(API_KEY, WORKSPACE_SLUG, TEMP_FILE, latest_doc_hash)
