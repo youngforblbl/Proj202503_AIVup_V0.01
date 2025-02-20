@@ -88,7 +88,7 @@ async def chat_with_llm(request: ChatRequest):
             "choices": [
                 {
                     "index": 0,
-                    "message": {
+                    "message": {               # 实际上唯一有用的部分
                         "role": "assistant",
                         "content": response
                     },
@@ -96,8 +96,8 @@ async def chat_with_llm(request: ChatRequest):
                 }
             ],
             "usage": {
-                "prompt_tokens": len(user_input),  # 粗略估算
-                "completion_tokens": len(response),  # 粗略估算
+                "prompt_tokens": len(user_input),  # 粗略估算，实际并没有用
+                "completion_tokens": len(response),  # 粗略估算，#实际并没有用
                 "total_tokens": len(user_input) + len(response)
             }
         }
